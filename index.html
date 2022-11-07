@@ -132,7 +132,7 @@
       setTimeout(procesarCamara, 20);
     }
     function predecir() {
-      if (modelo != true) {
+      if (modelo != null) {
         resample_single(canvas, 100, 100, otrocanvas);
 
         //Hacer la predicción
@@ -162,7 +162,7 @@
         var resultado = modelo.predict(tensor).dataSync();
 
         var respuesta;
-        if (resultado <= .5) {
+        if (resultado <= .6) {
           respuesta = "Gato";
         } else {
           respuesta = "Perro";
